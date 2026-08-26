@@ -1,11 +1,203 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>BananaTian</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1>Hello, BananaTian.</h1>
-    <p>My portfolio is under construction.</p>
+
+    <main class="room">
+
+        <div class="desk">
+
+            <div class="computer">
+
+                <div class="monitor">
+                    <div class="screen">
+                        <button id="powerButton">POWER</button>
+
+                        <div id="portfolioScreen">
+
+                            <h1>PORTFOLIO</h1>
+
+                            <button id="enterButton">ENTER</button>
+
+                        </div>
+
+                        <div id="fileWindow">
+
+                            <div class="windowBar">
+                                <span>Portfolio</span>
+                            </div>
+
+                            <div class="files">
+
+                                <button class="folder" id="projectsFolder">
+                                    📁 PROJECTS
+                                </button>
+
+                                <button class="file" id="aboutMeFile">
+                                    📄 aboutme.txt
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                        <div id="projectsWindow">
+
+                            <div class="windowBar">
+                                <span>PROJECTS</span>
+                                <button id="closeProjects">X</button>
+                            </div>
+
+                            <div class="files">
+
+                                <button class="file" data-project="Doggie Kicker">
+                                    📁 Doggie Kicker
+                                </button>
+
+                                <button class="file" data-project="Escape by the Dawn">
+                                    📁 Escape by the Dawn
+                                </button>
+
+                                <button class="file" data-project="Luce in the Dark">
+                                    📁 Luce in the Dark
+                                </button>
+
+                                <button class="file" data-project="Lucid Dream">
+                                    📁 Lucid Dream
+                                </button>
+
+                                <button class="file" data-project="Ca Phe Legacy">
+                                    📁 Ca Phe Legacy
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                        <div id="projectWindow">
+
+                            <div class="windowBar">
+                                <span id="projectTitle">Project</span>
+
+                                <div class="windowButtons">
+                                    <button id="maximizeProject">□</button>
+                                    <button id="closeProject">X</button>
+                                </div>
+                            </div>
+
+                            <div class="projectContent">
+
+                                <div class="projectHero">
+                                    GAME IMAGE
+                                </div>
+
+                                <h1 id="projectName">Doggie Kicker</h1>
+
+                                <p id="projectDescription">
+                                    A small 2D endless score game made as a solo project.
+                                </p>
+
+                                <div class="projectInfo">
+
+                                    <div>
+                                        <h3>TYPE</h3>
+                                        <p id="projectType">2D / Endless</p>
+                                    </div>
+
+                                    <div>
+                                        <h3>ROLE</h3>
+                                        <p id="projectRole">Solo Developer</p>
+                                    </div>
+
+                                    <div>
+                                        <h3>TOOLS</h3>
+                                        <p id="projectTools">Unity / C#</p>
+                                    </div>
+
+                                </div>
+
+                                <h2>ABOUT</h2>
+
+                                <p id="projectAbout">
+                                    A short game focused on a simple gameplay loop and score chasing.
+                                </p>
+
+                                <div class="projectButtons">
+
+                                    <button>PLAY</button>
+                                    <button>VIDEO</button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div id="aboutWindow">
+
+                            <div class="windowBar">
+
+                                <span>aboutme.txt</span>
+
+                                <div class="windowButtons">
+
+                                    <button id="maximizeAbout">□</button>
+                                    <button id="closeAbout">X</button>
+
+                                </div>
+
+                            </div>
+
+                            <div class="aboutContent">
+
+                                <h1>BANANATIAN</h1>
+
+                                <p>
+                                    Game Design Student
+                                </p>
+
+                                <p>
+                                    I make games, experiment with Unity,
+                                    and create strange little things.
+                                </p>
+
+                                <hr>
+
+                                <h2>TOOLS</h2>
+
+                                <p>
+                                    Unity<br>
+                                    C#<br>
+                                    Blender
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="computerBase"></div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+
 </body>
+
 </html>
