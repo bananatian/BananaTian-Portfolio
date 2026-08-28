@@ -1,4 +1,4 @@
-const powerButton = document.getElementById("powerButton");
+﻿const powerButton = document.getElementById("powerButton");
 const portfolioScreen = document.getElementById("portfolioScreen");
 
 const enterButton = document.getElementById("enterButton");
@@ -18,6 +18,11 @@ const projectType = document.getElementById("projectType");
 const projectRole = document.getElementById("projectRole");
 const projectTools = document.getElementById("projectTools");
 const projectAbout = document.getElementById("projectAbout");
+const projectStatus = document.getElementById("projectStatus");
+const projectContribution = document.getElementById("projectContribution");
+const projectImage = document.getElementById("projectImage");
+const heroProjectName = document.getElementById("heroProjectName");
+const heroFileName = document.getElementById("heroFileName");
 
 const maximizeProject = document.getElementById("maximizeProject");
 
@@ -99,44 +104,69 @@ closeProjects.addEventListener("click", function () {
 const projects = {
 
     "Doggie Kicker": {
-        description: "A small 2D endless score game made as a solo project.",
-        type: "2D / Endless",
+        description: "A monochrome arcade survival game about a Human Dog fighting an endless stream of mysterious 'Things'.",
+        type: "2D / Arcade Survival",
         role: "Solo Developer",
-        tools: "Unity / C#",
-        about: "A short game focused on a simple gameplay loop and score chasing."
+        tools: "Unity / C# / Piskel / GarageBand",
+        status: "Released",
+        about: "Originally created as a university assignment, Doggie Kicker grew into a complete solo project as I developed its own characters, world concept, pixel art and music.",
+        contribution: "Developed the core gameplay systems in Unity, including player movement, combat, enemy spawning, health, scoring, difficulty progression and game flow. Created the game's pixel art in Piskel and arranged its background music in GarageBand.",
+        image: "images/doggie-kicker.png",
+        heroName: "DOGGIE KICKER",
+        heroFileName: "DOGGIE_KICKER.EXE"
     },
 
     "Escape by the Dawn": {
-        description: "A short 3D horror game created as a solo project.",
+        description: "A short low-poly 3D horror game inspired by the atmosphere and controls of early survival horror games.",
         type: "3D / Horror",
-        role: "Solo Developer",
-        tools: "Unity / Blender",
-        about: "A small horror experience combining exploration, atmosphere and simple survival mechanics."
+        role: "Programmer / Unity Developer",
+        tools: "Unity / C# / Blender",
+        status: "Released",
+        about: "Created as a three-person university mini project, Escape by the Dawn follows a lost horse trying to escape a foggy forest. Players navigate through the forest by following red-ribbon markers while avoiding two different creatures. The game was designed around a PS2-era survival horror aesthetic, using low-poly visuals, fog and tank-style movement.",
+        contribution: "Responsible for the full Unity implementation, including player movement, third-person camera follow, stamina, animations, monster behaviour, gameplay interactions, terrain setup, death and victory flow. I also designed and modelled the creatures and main character in Blender, including the Deer Spider and the long-limbed forest creature.",
+        image: "images/escape-by-the-dawn.png",
+        heroName: "ESCAPE BY THE DAWN",
+        heroFileName: "ESCAPE_BY_THE_DAWN.EXE"
     },
 
     "Luce in the Dark": {
-        description: "A 2D narrative game with meta elements and multiple endings.",
-        type: "2D / Narrative / Meta",
-        role: "Programmer",
+        description: "A 2D narrative platformer about an IT student questioning why they chose to study technology in the first place.",
+        type: "2D / Narrative / Platformer / Meta",
+        role: "Programmer / Unity Developer",
         tools: "Unity / C#",
-        about: "A group project focused on narrative, interaction and meta gameplay."
+        status: "Completed · Unreleased",
+        about: "Created as a four-person university project, Luce in the Dark follows an IT student who is pulled into a strange world inside their computer. Across multiple levels, the player fights enemies, rescues NPCs controlled by corrupted computers, and eventually faces a question about their original passion for games.",
+        contribution: "Responsible for the complete Unity implementation, including player movement, combat, health and lives, animations, camera follow, enemy behaviour, checkpoints, level flow, computer interactions, cutscenes, NPC dialogue, typewriter effects and the game's meta progression system. The meta system uses PlayerPrefs to track previous launches and alter events, endings and unlock a hidden route.",
+        image: "images/luce-in-the-dark.png",
+        heroName: "LUCE IN THE DARK",
+        heroFileName: "LUCE_IN_THE_DARK.EXE"
     },
 
     "Lucid Dream": {
-        description: "A personal 3D dreamcore exploration game.",
-        type: "3D / Dreamcore",
+        description: "A low-poly dreamcore exploration prototype created as a personal 3D learning project.",
+        type: "3D / Dreamcore / Exploration",
         role: "Solo Developer",
         tools: "Unity / Blender",
-        about: "An ongoing personal project about exploring strange spaces and collecting objects."
+        status: "Prototype",
+        about: "Originally created to learn Blender and Unity's 3D workflow, Lucid Dream grew into a small exploration prototype inspired by PS2-era visuals, dreamcore aesthetics and liminal spaces. Players explore a strange low-poly world, collect objects and inspect them through an interactive item system.",
+        contribution: "Created the project independently, including the low-poly character, 3D assets, materials, animations, rigging, Unity 3D setup, lighting, terrain, player movement, interactions, item pickup, item inspection, inventory system and gameplay flow.",
+        image: "images/lucid-dream.png",
+        heroName: "LUCID DREAM",
+        heroFileName: "LUCID_DREAM.EXE"
     },
 
     "Ca Phe Legacy": {
-        description: "A 2D coffee shop simulation game developed as a Final Year Project.",
+        description: "A 2D coffee shop simulation game developed as a Final Year Project in collaboration with Kopi Saigon.",
         type: "2D / Simulation / Narrative",
-        role: "Programmer",
+        role: "Programmer / Unity Developer",
         tools: "Unity / C#",
-        about: "An ongoing collaborative project developed with a real-world coffee brand."
-    }
+        status: "In Development",
+        about: "A collaborative Final Year Project where players take the role of Ishak, helping run Kopi Saigon by preparing customer orders, managing resources and earning money to develop the coffee shop.",
+        contribution: "Responsible for the complete Unity implementation, including gameplay systems, customer and order logic, recipe and ingredient systems, serving validation, patience and tips, daily scoring, progression, unlocking, decoration, UI, game flow, saving and data management.",
+        image: "images/ca-phe-legacy.png",
+        heroName: "CA PHE LEGACY",
+        heroFileName: "CA_PHE_LEGACY.EXE"
+    },
 
 };
 
@@ -160,6 +190,11 @@ files.forEach(function (file) {
         projectRole.textContent = project.role;
         projectTools.textContent = project.tools;
         projectAbout.textContent = project.about;
+        projectStatus.textContent = project.status;
+        projectContribution.textContent = project.contribution;
+        projectImage.src = project.image;
+        heroProjectName.textContent = project.heroName;
+        heroFileName.textContent = project.heroFileName;
 
         fileWindow.style.display = "none";
         projectWindow.style.display = "block";
