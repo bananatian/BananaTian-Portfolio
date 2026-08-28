@@ -162,9 +162,34 @@
 
                                 <div class="projectButtons">
 
-                                    <button>ITCH.IO</button>
-                                    <button>VIDEO</button>
+                                    <button id="itchButton">PLAY ON ITCH.IO</button>
+                                    <button id="videoButton">VIDEO</button>
 
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div id="videoWindow">
+
+                            <div class="windowBar">
+                                <span id="videoTitle">VIDEO</span>
+
+                                <div class="windowButtons">
+                                    <button id="closeVideo">X</button>
+                                </div>
+                            </div>
+
+                            <div class="videoContent">
+
+                                <video id="projectVideo" controls>
+                                    <source id="videoSource" src="" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+
+                                <div class="videoFileName" id="videoFileName">
+                                    VIDEO.MP4
                                 </div>
 
                             </div>

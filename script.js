@@ -23,6 +23,15 @@ const projectContribution = document.getElementById("projectContribution");
 const projectImage = document.getElementById("projectImage");
 const heroProjectName = document.getElementById("heroProjectName");
 const heroFileName = document.getElementById("heroFileName");
+const itchButton = document.getElementById("itchButton");
+
+const videoWindow = document.getElementById("videoWindow");
+const projectVideo = document.getElementById("projectVideo");
+const videoSource = document.getElementById("videoSource");
+const videoTitle = document.getElementById("videoTitle");
+const videoFileName = document.getElementById("videoFileName");
+const closeVideo = document.getElementById("closeVideo");
+const videoButton = document.getElementById("videoButton");
 
 const maximizeProject = document.getElementById("maximizeProject");
 
@@ -57,6 +66,7 @@ enterButton.addEventListener("click", function () {
 // Project window starts hidden
 projectWindow.style.display = "none";
 aboutWindow.style.display = "none";
+videoWindow.style.display = "none";
 
 // Click AboutMe
 aboutMeFile.addEventListener("click", function () {
@@ -111,9 +121,11 @@ const projects = {
         status: "Released",
         about: "Originally created as a university assignment, Doggie Kicker grew into a complete solo project as I developed its own characters, world concept, pixel art and music.",
         contribution: "Developed the core gameplay systems in Unity, including player movement, combat, enemy spawning, health, scoring, difficulty progression and game flow. Created the game's pixel art in Piskel and arranged its background music in GarageBand.",
-        image: "images/doggie-kicker.png",
         heroName: "DOGGIE KICKER",
-        heroFileName: "DOGGIE_KICKER.EXE"
+        heroFileName: "DOGGIE_KICKER.EXE",
+        image: "images/doggie-kicker.png",
+        video: "videos/doggie-kicker.mp4",
+        itch: "https://bananatian.itch.io/doggie-kicker"
     },
 
     "Escape by the Dawn": {
@@ -124,9 +136,11 @@ const projects = {
         status: "Released",
         about: "Created as a three-person university mini project, Escape by the Dawn follows a lost horse trying to escape a foggy forest. Players navigate through the forest by following red-ribbon markers while avoiding two different creatures. The game was designed around a PS2-era survival horror aesthetic, using low-poly visuals, fog and tank-style movement.",
         contribution: "Responsible for the full Unity implementation, including player movement, third-person camera follow, stamina, animations, monster behaviour, gameplay interactions, terrain setup, death and victory flow. I also designed and modelled the creatures and main character in Blender, including the Deer Spider and the long-limbed forest creature.",
-        image: "images/escape-by-the-dawn.png",
         heroName: "ESCAPE BY THE DAWN",
-        heroFileName: "ESCAPE_BY_THE_DAWN.EXE"
+        heroFileName: "ESCAPE_BY_THE_DAWN.EXE",
+        image: "images/escape-by-the-dawn.png",
+        video: "videos/escape-by-the-dawn.mp4",
+        itch: "https://bananatian.itch.io/escape-by-the-dawn"
     },
 
     "Luce in the Dark": {
@@ -137,9 +151,11 @@ const projects = {
         status: "Completed · Unreleased",
         about: "Created as a four-person university project, Luce in the Dark follows an IT student who is pulled into a strange world inside their computer. Across multiple levels, the player fights enemies, rescues NPCs controlled by corrupted computers, and eventually faces a question about their original passion for games.",
         contribution: "Responsible for the complete Unity implementation, including player movement, combat, health and lives, animations, camera follow, enemy behaviour, checkpoints, level flow, computer interactions, cutscenes, NPC dialogue, typewriter effects and the game's meta progression system. The meta system uses PlayerPrefs to track previous launches and alter events, endings and unlock a hidden route.",
-        image: "images/luce-in-the-dark.png",
         heroName: "LUCE IN THE DARK",
-        heroFileName: "LUCE_IN_THE_DARK.EXE"
+        heroFileName: "LUCE_IN_THE_DARK.EXE",
+        image: "images/luce-in-the-dark.png",
+        video: "videos/luce-in-the-dark.mp4",
+        itch: ""
     },
 
     "Lucid Dream": {
@@ -150,9 +166,11 @@ const projects = {
         status: "Prototype",
         about: "Originally created to learn Blender and Unity's 3D workflow, Lucid Dream grew into a small exploration prototype inspired by PS2-era visuals, dreamcore aesthetics and liminal spaces. Players explore a strange low-poly world, collect objects and inspect them through an interactive item system.",
         contribution: "Created the project independently, including the low-poly character, 3D assets, materials, animations, rigging, Unity 3D setup, lighting, terrain, player movement, interactions, item pickup, item inspection, inventory system and gameplay flow.",
-        image: "images/lucid-dream.png",
         heroName: "LUCID DREAM",
-        heroFileName: "LUCID_DREAM.EXE"
+        heroFileName: "LUCID_DREAM.EXE",
+        image: "images/lucid-dream.png",
+        video: "videos/lucid-dream.mp4",
+        itch: ""
     },
 
     "Ca Phe Legacy": {
@@ -163,9 +181,11 @@ const projects = {
         status: "In Development",
         about: "A collaborative Final Year Project where players take the role of Ishak, helping run Kopi Saigon by preparing customer orders, managing resources and earning money to develop the coffee shop.",
         contribution: "Responsible for the complete Unity implementation, including gameplay systems, customer and order logic, recipe and ingredient systems, serving validation, patience and tips, daily scoring, progression, unlocking, decoration, UI, game flow, saving and data management.",
-        image: "images/ca-phe-legacy.png",
         heroName: "CA PHE LEGACY",
-        heroFileName: "CA_PHE_LEGACY.EXE"
+        heroFileName: "CA_PHE_LEGACY.EXE",
+        image: "images/ca-phe-legacy.png",
+        video: "videos/ca-phe-legacy.mp4",
+        itch: "https://bananatian.itch.io/ca-phe-legacy"
     },
 
 };
@@ -192,9 +212,26 @@ files.forEach(function (file) {
         projectAbout.textContent = project.about;
         projectStatus.textContent = project.status;
         projectContribution.textContent = project.contribution;
-        projectImage.src = project.image;
         heroProjectName.textContent = project.heroName;
         heroFileName.textContent = project.heroFileName;
+        projectImage.src = project.image;
+
+        videoSource.src = project.video;
+        projectVideo.load();
+        videoTitle.textContent = project.heroName + " · VIDEO";
+        videoFileName.textContent = project.heroFileName.replace(".EXE", ".MP4");
+
+        if (project.itch) {
+            itchButton.style.display = "block";
+
+            itchButton.onclick = function () {
+                window.open(project.itch, "_blank");
+            };
+
+        } else {
+            itchButton.style.display = "none";
+        }
+
 
         fileWindow.style.display = "none";
         projectWindow.style.display = "block";
@@ -214,9 +251,28 @@ maximizeProject.addEventListener("click", function () {
 closeProject.addEventListener("click", function () {
 
     projectWindow.style.display = "none";
-
     projectWindow.classList.remove("projectMaximized");
-
     projectsWindow.style.display = "block";
+
+});
+
+// Click video
+videoButton.addEventListener("click", function () {
+
+    videoWindow.style.display = "block";
+
+    if (projectWindow.classList.contains("projectMaximized")) {
+        videoWindow.classList.add("videoSmall");
+    } else {
+        videoWindow.classList.remove("videoSmall");
+    }
+
+});
+
+// Close video
+closeVideo.addEventListener("click", function () {
+
+    videoWindow.style.display = "none";
+    videoWindow.classList.remove("videoSmall");
 
 });
